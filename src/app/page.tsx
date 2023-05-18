@@ -1,34 +1,50 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client";
+
+import Image from "next/image";
+import styles from "./page.module.css";
+
+import React, { useState } from "react";
+import { Textarea, Grid, Container } from "@nextui-org/react";
+import TranslationBox from "@/components/translation";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
+          ابدأ بـ&nbsp;
+          <code className={styles.code}>كتابة شيء لطيف</code>
         </p>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          <Link
+            href="https://www.qcharity.org/en/qa/about"
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            {/* بشراكة{" "} */}
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
+              src="/qc.png"
+              alt="شعار قطر الخيرية"
               className={styles.vercelLogo}
+              // width={auto}
+              // height={24}
+              // fill
               width={100}
-              height={24}
+              height={40}
               priority
             />
-          </a>
+          </Link>
         </div>
       </div>
 
-      <div className={styles.center}>
+      <Container css={{ flexGrow: "1" }}>
+        <TranslationBox />
+      </Container>
+
+      {/* <div className={styles.center}>
+        
+
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -37,9 +53,9 @@ export default function Home() {
           height={37}
           priority
         />
-      </div>
+      </div> */}
 
-      <div className={styles.grid}>
+      {/* <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           className={styles.card}
@@ -89,7 +105,7 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
-      </div>
+      </div> */}
     </main>
-  )
+  );
 }
